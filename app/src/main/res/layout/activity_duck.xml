@@ -6,21 +6,35 @@
     android:layout_height="match_parent"
     tools:context=".Duck">
 
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fduck"
+        android:name="com.zyablik.sixthapp.ducky"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/botbar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/botbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:backgroundTint="@color/white"
         android:background="@color/white"
+        app:backgroundTint="@color/white"
         app:itemIconTint="@color/black"
         app:itemTextColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/frame"
         app:menu="@menu/bot_nav_menu"/>
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/frame"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintBottom_toTopOf="@id/fduck"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/botbar"/>
+        android:layout_width="match_parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
